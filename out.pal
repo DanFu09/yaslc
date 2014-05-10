@@ -1,0 +1,306 @@
+$main movw SP R0
+addw #4 SP
+jmp $0 
+$1 movw R0 R0
+movw +4$display +0@FP
+movw FP +4$display
+addw #0 SP
+jmp $2 
+$3 movw R0 R0
+movw +8$display +0@FP
+movw FP +8$display
+addw #0 SP
+jmp $4 
+$4 movw R0 R0
+addw #4 SP
+movw -0@AP +4@FP
+addw #4 SP
+movw SP R1
+movw +8$display R3
+movw #0 +8@R3
+addw #4 SP
+addw #4 SP
+movw +8$display R2
+movw +8$display R3
+cmpw +4@R2 +8@R3
+movw +8$display R3
+movw #1 +12@R3
+bneq $7 
+movw +8$display R3
+movw #0 +12@R3
+$7 movw R0 R0
+movw +8$display R2
+movw +12@R2 @R1
+movw R1 SP
+addw #4 SP
+cmpw #0 -4@SP
+subw #4 SP
+beq $8 
+outb ^c
+outb #32 
+movw SP R1
+movw +0$display R2
+movw +0@R2 @R1
+movw R1 SP
+addw #4 SP
+outw @R1 
+subw #4 SP
+outb #10 
+movw SP R1
+movw +8$display R3
+movw #1 +8@R3
+addw #4 SP
+addw #4 SP
+movw +8$display R2
+movw +8$display R3
+movw +4@R2 +12@R3
+movw +8$display R2
+movw +8$display R3
+subw +8@R2 +12@R3
+movw +8$display R2
+movw +12@R2 @R1
+movw R1 SP
+addw #4 SP
+call #1 $3
+$8 movw R0 R0 :Dummy, else label
+movw +0@FP +8$display
+movw FP SP
+ret  
+$2 movw R0 R0
+addw #4 SP
+movw -4@AP +4@FP
+addw #4 SP
+movw -0@AP +8@FP
+addw #4 SP
+movw SP R1
+movw +4$display R3
+movw #0 +12@R3
+addw #4 SP
+addw #4 SP
+movw +4$display R2
+movw +4$display R3
+cmpw +4@R2 +12@R3
+movw +4$display R3
+movw #1 +16@R3
+bneq $14 
+movw +4$display R3
+movw #0 +16@R3
+$14 movw R0 R0
+movw +4$display R2
+movw +16@R2 @R1
+movw R1 SP
+addw #4 SP
+cmpw #0 -4@SP
+subw #4 SP
+beq $15 
+outb ^b
+outb #32 
+movw SP R1
+movw +4$display R2
+movw +8@@R2 @R1
+movw R1 SP
+addw #4 SP
+outw @R1 
+subw #4 SP
+outb #10 
+movw SP R1
+movw +4$display R3
+movw #1 +12@R3
+addw #4 SP
+addw #4 SP
+movw +4$display R2
+movw +4$display R3
+movw +4@R2 +16@R3
+movw +4$display R2
+movw +4$display R3
+subw +12@R2 +16@R3
+movw +4$display R2
+movw +16@R2 @R1
+movw R1 SP
+addw #4 SP
+movw SP R1
+movw +0$display R2
+movw +0@R2 @R1
+movw R1 SP
+addw #4 SP
+subw #4 SP
+movw +0$display R2
+mova +0@R2 @SP
+addw #4 SP
+call #2 $1
+jmp $16 
+$15 movw R0 R0 :Dummy, else label
+movw SP R1
+movw +4$display R3
+movw #1 +12@R3
+addw #4 SP
+addw #4 SP
+movw +4$display R2
+movw +4$display R3
+movw +8@@R2 +16@R3
+movw +4$display R2
+movw +4$display R3
+subw +12@R2 +16@R3
+movw +4$display R2
+movw +16@R2 @R1
+movw R1 SP
+addw #4 SP
+movw +4$display R3
+movw -4@SP +8@@R3
+subw #4 SP
+movw SP R1
+movw +4$display R3
+movw #1 +12@R3
+addw #4 SP
+movw +4$display R2
+movw +12@R2 @R1
+movw R1 SP
+addw #4 SP
+call #1 $3
+$16 movw R0 R0 :Dummy, after if label
+movw +0@FP +4$display
+movw FP SP
+ret  
+$22 movw R0 R0
+movw +4$display +0@FP
+movw FP +4$display
+addw #0 SP
+jmp $23 
+$23 movw R0 R0
+addw #4 SP
+movw -4@AP +4@FP
+addw #4 SP
+movw -0@AP +8@FP
+addw #4 SP
+movw SP R1
+movw +4$display R3
+movw #0 +12@R3
+addw #4 SP
+addw #4 SP
+movw +4$display R2
+movw +4$display R3
+cmpw +4@R2 +12@R3
+movw +4$display R3
+movw #1 +16@R3
+bneq $26 
+movw +4$display R3
+movw #0 +16@R3
+$26 movw R0 R0
+movw +4$display R2
+movw +16@R2 @R1
+movw R1 SP
+addw #4 SP
+cmpw #0 -4@SP
+subw #4 SP
+beq $27 
+outb ^a
+outb #32 
+movw SP R1
+movw +4$display R2
+movw +8@@R2 @R1
+movw R1 SP
+addw #4 SP
+outw @R1 
+subw #4 SP
+outb #10 
+movw SP R1
+movw +4$display R3
+movw #1 +12@R3
+addw #4 SP
+addw #4 SP
+movw +4$display R2
+movw +4$display R3
+movw +4@R2 +16@R3
+movw +4$display R2
+movw +4$display R3
+subw +12@R2 +16@R3
+movw +4$display R2
+movw +16@R2 @R1
+movw R1 SP
+addw #4 SP
+movw SP R1
+movw +0$display R2
+movw +0@R2 @R1
+movw R1 SP
+addw #4 SP
+subw #4 SP
+movw +0$display R2
+mova +0@R2 @SP
+addw #4 SP
+call #2 $22
+jmp $28 
+$27 movw R0 R0 :Dummy, else label
+movw SP R1
+movw +4$display R3
+movw #1 +12@R3
+addw #4 SP
+addw #4 SP
+movw +4$display R2
+movw +4$display R3
+movw +8@@R2 +16@R3
+movw +4$display R2
+movw +4$display R3
+subw +12@R2 +16@R3
+movw +4$display R2
+movw +16@R2 @R1
+movw R1 SP
+addw #4 SP
+movw +4$display R3
+movw -4@SP +8@@R3
+subw #4 SP
+movw SP R1
+movw +4$display R3
+movw #2 +12@R3
+addw #4 SP
+movw +4$display R2
+movw +12@R2 @R1
+movw R1 SP
+addw #4 SP
+movw SP R1
+movw +0$display R2
+movw +0@R2 @R1
+movw R1 SP
+addw #4 SP
+subw #4 SP
+movw +0$display R2
+mova +0@R2 @SP
+addw #4 SP
+call #2 $1
+$28 movw R0 R0 :Dummy, after if label
+movw +0@FP +4$display
+movw FP SP
+ret  
+$display #12 
+$0 movw R0 R0
+movw R0 +0$display
+movw SP R1
+movw +0$display R3
+movw #3 +4@R3
+addw #4 SP
+movw +0$display R2
+movw +4@R2 @R1
+movw R1 SP
+addw #4 SP
+movw +0$display R3
+movw -4@SP +0@R3
+subw #4 SP
+movw SP R1
+movw +0$display R3
+movw #3 +4@R3
+addw #4 SP
+movw +0$display R2
+movw +4@R2 @R1
+movw R1 SP
+addw #4 SP
+movw SP R1
+movw +0$display R2
+movw +0@R2 @R1
+movw R1 SP
+addw #4 SP
+subw #4 SP
+movw +0$display R2
+mova +0@R2 @SP
+addw #4 SP
+call #2 $22
+inb @sp
+end

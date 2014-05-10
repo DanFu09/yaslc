@@ -1,0 +1,17 @@
+program sumup;
+
+int x, y, sum;
+
+	function print (int &x);
+	begin
+		cout << x << endl
+	end;
+
+begin
+	cin >> x;
+	cin >> y;
+	sum = x + y;
+	cout << sum << endl;
+	{$s+}
+	print(sum)
+end.

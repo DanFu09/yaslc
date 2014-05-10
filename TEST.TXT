@@ -1,0 +1,47 @@
+program demo;
+
+	int y;
+
+	function b (int n, int &x);
+
+		function c (int n);
+		begin
+			if (n <> 0) then
+				begin
+					cout << 'c ' << y << endl;
+					c(n-1)
+				end
+		end;
+	
+	begin
+		if (n <> 0) then
+			begin
+				cout << 'b ' << x << endl;
+				b(n-1, y)
+			end
+		else
+			begin
+				x = x - 1;
+				c(1)
+			end
+	end;
+	
+	function a (int n, int &x);
+	
+	begin
+		if (n <> 0) then
+			begin
+				cout << 'a ' << x << endl;
+				a(n-1, y)
+			end
+		else
+			begin
+				x = x-1;
+				b(2, y)
+			end
+	end;
+
+begin
+	y = 3;
+	a(3, y)
+end.

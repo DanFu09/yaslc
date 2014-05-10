@@ -1,0 +1,11 @@
+program errors;
+
+int x, y, z;
+boolean fee, foo, fi;
+
+begin
+	fee = true;
+	foo = false;
+	fi = true;
+	cin >> fee
+end.
